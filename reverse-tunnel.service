@@ -1,0 +1,14 @@
+[Unit]
+Description=Reverse Tunnel SSH
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/nohup /usr/bin/ssh -NR $PORT:localhost:22 $USER@$HOST -i $PATH_TO_KEY -o StrictHostKeyChecking=no -o ExitOnForwardFailure=yes
+Restart=on-failure
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
