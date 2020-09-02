@@ -24,23 +24,13 @@ Change to the reverse-tunnel directory
 $ cd reverse-tunnel
 ```
 
-Copy the SSH key to ./key and make sure it's not readable by everyone
+Put your SSH private key inside the `key` directory and modify the environment configuration, once you're done, run the install commands
 ```
-$ cp /PATH/TO/KEY ./key/KEY_NAME
-$ chmod 400 ./key/KEY_NAME
-```
-
-Put in the server credentials in ssh.conf
-```
-$ nano ssh.conf
+$ nano .env
+# make install
 ```
 
-Use the install script to install
+To remove and uninstall the service, use the clean command
 ```
-# ./install.sh
-```
-
-Reboot the Raspberry Pi
-```
-# reboot
+# make clean
 ```
