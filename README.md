@@ -34,3 +34,7 @@ To remove and uninstall the service, use the clean command
 ```
 # make clean
 ```
+
+## Notes
+
+All keys are stored in `/opt/reverse`
